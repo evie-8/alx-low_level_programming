@@ -3,8 +3,6 @@
 /**
  * main - Entry point
  *
- * puts - returns string values
- *
  * Return: Always 0 (Sucess)
  */
 int main(void)
