@@ -10,9 +10,13 @@ int main(void)
 
 	while (number <= 57)
 	{
-	putchar(number);
+	if (number == 9)
+	{
+	break;
+	}
 	putchar(',');
 	putchar(' ');
+	putchar(number);
 	number++;
 	}
 	putchar('\n');
