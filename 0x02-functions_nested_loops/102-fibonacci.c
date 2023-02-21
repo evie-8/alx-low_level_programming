@@ -6,17 +6,17 @@
  */
 int main(void)
 {
-	int number1 = 1;
-	int number2 = 2;
+	long int number1 = 1;
+	long int number2 = 2;
 	int i;
 	long int newnumber;
 
-	printf("%d, %d, ", number1, number2);
-	for (i = 2; i <= 48; i++)
+	printf("%ld, %ld, ", number1, number2);
+	for (i = 2; i <= 49; i++)
 	{
 	newnumber = number1 + number2;
 	printf("%ld", newnumber);
-	if (i != 48)
+	if (i != 49)
 	{
 	printf(",");
 	printf(" ");
