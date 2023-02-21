@@ -9,13 +9,13 @@ int main(void)
 	int number1 = 1;
 	int number2 = 2;
 	int i;
-	unsigned long long int newnumber;
+	long int newnumber;
 
 	printf("%d, %d, ", number1, number2);
 	for (i = 2; i <= 48; i++)
 	{
 	newnumber = number1 + number2;
-	printf("%lld", newnumber);
+	printf("%ld", newnumber);
 	if (i != 48)
 	{
 	printf(",");
