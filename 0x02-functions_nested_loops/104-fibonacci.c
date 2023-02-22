@@ -11,14 +11,13 @@ int main(void)
 	int i;
 
 	printf("%lu, %lu, ", num1, num2);
-	for (i = 2; i <= 91; i++)
+	for (i = 1; i < 91; i++)
 	{
 	num = num1 + num2;
 	printf("%lu", num);
-	if (i <= 91)
+	if (i != 91)
 	{
-	printf(",");
-	printf(" ");
+	printf(", ");
 	}
 	num1 = num2;
 	num2 = num;
@@ -27,15 +26,15 @@ int main(void)
 	a2 = num1 % 1000000000;
 	b1 = num2 / 1000000000;
 	b2 = num2 % 1000000000;
-	for (i = 92; i <= 98; i++)
+	for (i = 92; i < 98; ++i)
 	{
-		printf("%lu", b1 + (b2 / 1000000000));
-		printf("%lu", b2 % 1000000000);
 		b1 = b1 + a1;
 		a1 = b1 - a1;
 		b2 = b2 + a2;
 		a2 = b2 - a2;
-		if (i != 98)
+		printf("%lu", b1 + (b2 / 1000000000));
+		printf("%lu", b2 % 1000000000);
+		if (i != 97)
 		{
 		printf(", ");
 		}
