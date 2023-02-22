@@ -5,16 +5,16 @@
  */
 int main(void)
 {
-	unsigned long int num1 = 1;
-	unsigned long int num2 = 2;
-	unsigned long int num;
+	unsigned long long int num1 = 1;
+	unsigned long long int num2 = 2;
+	unsigned long long int num;
 	int i;
 
-	printf("%lu, %lu, ", num1, num2);
+	printf("%llu, %llu, ", num1, num2);
 	for (i = 2; i <= 97; i++)
 	{
 	num = num1 + num2;
-	printf("%lu", num);
+	printf("%llu", num);
 	if (i != 97)
 	{
 	printf(",");
