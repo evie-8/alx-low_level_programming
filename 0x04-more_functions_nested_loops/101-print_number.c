@@ -13,7 +13,8 @@ void print_number(int n)
 		number = n;
 		_putchar('-');
 	}
-	if (number / 10)
-	print_number(n / 10);
+	number = number / 10;
+	if (number != 0)
+	print_number(number);
 	_putchar((unsigned int)n % 10 + '0');
 }
