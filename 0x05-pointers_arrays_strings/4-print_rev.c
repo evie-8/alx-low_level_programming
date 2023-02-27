@@ -15,12 +15,8 @@ void print_rev(char *s)
 	}
 	for (i = count; i >= 0; i--)
 	{
-	if (i == count)
-	{
-		count = count - 1;
-	}
-	_putchar(*s);
 	s--;
+	_putchar(*s);
 	}
 	_putchar('\n');
 }
