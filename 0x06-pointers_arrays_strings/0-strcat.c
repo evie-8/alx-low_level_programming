@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 /**
  * _strcat - combine two strings
  * @dest: first string
@@ -9,7 +7,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int j, k, i = 0;
+	int j, i = 0;
 
 	while (*dest != '\0')
 	{
@@ -17,15 +15,12 @@ char *_strcat(char *dest, char *src)
 		dest++;
 	}
 	j = 0;
-	while (*src != '\0')
+	while (src[j] != '\0')
 	{
+		dest[i] = src[j];
 		j++;
-		src++;
+		i++;
 	}
-	for (k = 0; k <= j; k++)
-	{
-		dest[i + k] = src[k];
-	}
-	printf("%s\n", dest);
+	dest[i] = '\0';
 	return (dest);
 }
