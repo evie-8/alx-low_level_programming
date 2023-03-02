@@ -7,16 +7,20 @@
 
 char *rot13(char *s)
 {
-	int i;
+	int i, j;
+	char alphabet[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+	char replaced[] = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((s[i] >= 'a'  && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M'))
+		for (j = 0; j < 52; j++)
+		if (s[i] == alphabet[j])
 		{
-			s[i] = s[i] + 13;
+			s[i] = replaced[j];
+			break;
 		}
-		else if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
-			s[i] = s[i] - 13;
+		else
+			s[i] = s[i];
 	}
 	return (s);
 }
