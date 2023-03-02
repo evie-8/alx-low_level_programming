@@ -9,9 +9,9 @@ char *cap_string(char *s)
 	int i;
 	char prev = ' ';
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0';i++)
 	{
-		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9'))
+		if ((s[i] >= 'a' && s[i] <= 'z'))
 		{
 			if (i == 0 || prev == ' ' || prev == '\t' || prev == '\n' ||
 			prev == ',' || prev == ';' || prev == '.' ||
