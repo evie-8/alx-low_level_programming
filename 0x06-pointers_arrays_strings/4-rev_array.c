@@ -8,11 +8,7 @@ void reverse_array(int *a, int n)
 {
 	int i, t, half;
 
-	if (n % 2 == 0)
-		half = (n / 2);
-	else
-		half = (n - 1) / 2;
-
+	half = (n - 1) / 2;
 	for (i = 0; i <= half; i++)
 	{
 		t = a[i];
