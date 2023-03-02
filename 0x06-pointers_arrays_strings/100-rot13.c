@@ -19,8 +19,6 @@ char *rot13(char *s)
 			s[i] = replaced[j];
 			break;
 		}
-		else
-			s[i] = s[i];
 	}
 	return (s);
 }
