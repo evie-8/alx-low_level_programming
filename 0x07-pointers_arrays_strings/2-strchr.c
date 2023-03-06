@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
  * _strchr - displays first occurence of a specified character
  * @s: string
@@ -13,7 +12,13 @@ char *_strchr(char *s, char c)
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] == c)
+		{
 			return (s + i);
+		}
 	}
-	return (NULL);
+	if (s[i] == c)
+	{
+		return (s + i);
+	}
+	return (0);
 }
