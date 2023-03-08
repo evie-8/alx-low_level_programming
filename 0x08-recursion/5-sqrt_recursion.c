@@ -8,8 +8,10 @@
  */
 int sqrt1(int n, int low, int high)
 {
-	int mid, sq;
+	long int mid, sq;
 
+	if (low > high)
+		return (-1);
 	mid = (low + high) / 2;
 	if (mid == low)
 		return (-1);
