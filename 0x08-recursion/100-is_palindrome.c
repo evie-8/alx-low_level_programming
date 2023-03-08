@@ -15,6 +15,20 @@ int _strlen_recursion(char *s)
 }
 
 /**
+ * is_palindrome2 - compares strings
+ * @s: original strig
+ * @end: string we are comparing to
+ * Return: 1 if palindrome
+ */
+int is_palindrome2(char *s, char *end)
+{
+	if (s >= end)
+		return (1);
+	if (*s != *end)
+		return (0);
+	return (is_palindrome2(s + 1, end - 1));
+}
+/**
  * is_palindrome - string is the same when red backwards
  * @s: string
  * Return: 1 if palindrome and 0 if not
@@ -22,15 +36,8 @@ int _strlen_recursion(char *s)
 int is_palindrome(char *s)
 {
 	int i = _strlen_recursion(s);
-	char *a = s;
-	char *z = s + i - 1;
 
-	while (a < z)
-	{
-		if (*a != *z)
-			return (0);
-		a++;
-		z--;
-	}
-	return (1);
+	if (i <= 1)
+		return (1);
+	return (is_palindrome2(s, s + i - 1));
 }
