@@ -8,9 +8,7 @@ int is_prime_number(int n)
 {
 	int i, count = 0;
 
-	if (n <= 0)
-		return (0);
-	else if (n > 0)
+	if (n > 0)
 	{
 		for (i = 1; i <= n; i++)
 		{
