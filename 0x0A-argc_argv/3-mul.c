@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 /**
  * main - entry point
  * @argc: number of arguments passed to command line
@@ -16,7 +18,10 @@ int main(int argc, char *argv[])
 	{
 	for (i = 1; i < argc; i++)
 	{
+		if (isdigit(*argv[i]))
 			product *= atoi(argv[i]);
+		else
+			printf("Error\n");
 	}
 	printf("%d\n", product);
 	}
