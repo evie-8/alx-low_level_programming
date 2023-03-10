@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	printf("%d\n", cents[4][num]);
+	return (0);
 	}
 	return (0);
 }
