@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 {
 	int coins[5] = {1, 2, 5, 10, 25};
 	int i, j, num;
-	int cents[5][1000];
+	int cents[5][100000];
 
 	if (argc != 2)
 	{
