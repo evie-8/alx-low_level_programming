@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	}
 	printf("%d\n", product);
 	}
-	printf("Error\n");
+	else
+		printf("Error\n");
 	return (1);
 }
