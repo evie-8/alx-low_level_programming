@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int i, product = 1;
 
-	if (argc <= 2)
+	if (argc <= 2 || argc <= 3)
 		printf("Error\n");
 	else
 	{
