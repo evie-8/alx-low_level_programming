@@ -9,39 +9,36 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int j, k, i = 0;
+	unsigned int k;
 	char *s;
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (s2[j] != '\0')
-		j++;
 	if (s1 == NULL)
 	{
-		s = malloc(sizeof(char) * (j + 1));
+		s = malloc(sizeof(char) * (strlen(s2) + 1));
 		if (s == NULL)
 			return (NULL);
-		strcpy(s, s2);
+		for (k = 0; k < strlen(s2); k++)
+			s[k] = s2[k];
+		s[strlen(s2)] = '\0';
 		return (s);
 	}
 	if (s2 == NULL)
 	{
-		s = malloc(sizeof(char) * (i + 1));
+		s = malloc(sizeof(char) * (strlen(s1) + 1));
 		if (s == NULL)
 			return (NULL);
 		strcpy(s, s1);
 		return (s);
 	}
-	s = malloc(sizeof(char) * (i + j + 1));
+	s = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
 	if (s == NULL)
 		return (NULL);
-	for (k = 0; k < i; k++)
+	for (k = 0; k < strlen(s1); k++)
 		s[k] = s1[k];
-	for (k = i; k < i + j + 1; k++)
-		s[k] = s2[k - i];
-	s[i + j] = '\0';
+	for (k = strlen(s1); k < strlen(s1) + strlen(s2) + 1; k++)
+		s[k] = s2[k - strlen(s1)];
+	s[strlen(s1) + strlen(s2)] = '\0';
 	return (s);
 }
