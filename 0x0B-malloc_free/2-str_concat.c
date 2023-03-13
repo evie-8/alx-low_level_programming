@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * str_concat - combine two strings
  * @s1: first string
@@ -13,15 +14,27 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	else if (s1 == NULL)
-		return (s2);
-	else if (s2 == NULL)
-		return (s1);
 	while (s1[i] != '\0')
 		i++;
 	j = 0;
 	while (s2[j] != '\0')
 		j++;
+	if (s1 == NULL)
+	{
+		s = malloc(sizeof(char) * (j + 1));
+		if (s == NULL)
+			return (NULL);
+		strcpy(s, s2);
+		return (s);
+	}
+	if (s2 == NULL)
+	{
+		s = malloc(sizeof(char) * (i + 1));
+		if (s == NULL)
+			return (NULL);
+		strcpy(s, s1);
+		return (s);
+	}
 	s = malloc(sizeof(char) * (i + j + 1));
 	if (s == NULL)
 		return (NULL);
