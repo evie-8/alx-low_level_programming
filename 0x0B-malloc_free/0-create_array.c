@@ -17,6 +17,7 @@ char *create_array(unsigned int size, char c)
 	memset(array, c, size);
 	if (array == NULL)
 		return (NULL);
-	return (array);
+	else
+		return (array);
 	free(array);
 }
