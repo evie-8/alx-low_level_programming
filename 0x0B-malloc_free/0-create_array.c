@@ -12,9 +12,8 @@ char *create_array(unsigned int size, char c)
 	char *array;
 
 	array = malloc(size * sizeof(c));
-	memset(array, c, size);
 	if (array == NULL || size == 0)
 		return (NULL);
-	else
-		return (array);
+	memset(array, c, size);
+	return (array);
 }
