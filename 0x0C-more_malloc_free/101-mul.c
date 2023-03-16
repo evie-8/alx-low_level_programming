@@ -25,9 +25,9 @@ int _is_digit(char *s)
  * print_number - displays a number
  * @n: number to be printed
  */
-void print_number(int n)
+void print_number(long int n)
 {
-	unsigned int number = n;
+	unsigned long int number = n;
 
 	if (n < 0)
 	{
@@ -38,7 +38,7 @@ void print_number(int n)
 	number = number / 10;
 	if (number != 0)
 		print_number(number);
-	_putchar((unsigned int)n % 10 + '0');
+	_putchar((unsigned long int)n % 10 + '0');
 }
 /**
  * strings - prints string
@@ -61,7 +61,8 @@ void strings(char *s)
 int main(int argc, char *argv[])
 {
 	char *s = "Error\n";
-	int num, j, product = 1;
+	unsigned long int num, product = 1;
+	int j;
 
 	if (argc != 3)
 	{
