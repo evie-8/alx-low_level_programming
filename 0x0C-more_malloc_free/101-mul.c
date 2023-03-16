@@ -61,7 +61,7 @@ void strings(char *s)
 int main(int argc, char *argv[])
 {
 	char *s = "Error\n";
-	unsigned long int num, product = 1;
+	unsigned long num, product = 1;
 	int j;
 
 	if (argc != 3)
