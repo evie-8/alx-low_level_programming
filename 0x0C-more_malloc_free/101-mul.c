@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _is_digit - checks if all characters of a string lie between 0 and 9
  * @s: string
@@ -7,7 +8,7 @@
  */
 int _is_digit(char *s)
 {
-	int j, i = 0;
+	unsigned long int j, i = 0;
 
 	while (s[i])
 		i++;
@@ -20,25 +21,6 @@ int _is_digit(char *s)
 			return (0);
 	}
 	return (1);
-}
-/**
- * print_number - displays a number
- * @n: number to be printed
- */
-void print_number(long int n)
-{
-	unsigned long int number = n;
-
-	if (n < 0)
-	{
-		n = n * -1;
-		number = n;
-		_putchar('-');
-	}
-	number = number / 10;
-	if (number != 0)
-		print_number(number);
-	_putchar((unsigned long int)n % 10 + '0');
 }
 /**
  * strings - prints string
@@ -73,7 +55,7 @@ int main(int argc, char *argv[])
 	{
 		if (_is_digit(argv[j]))
 		{
-			num = atoi(argv[j]);
+			num = atol(argv[j]);
 			product *= num;
 		}
 		else
@@ -82,7 +64,6 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 	}
-	print_number(product);
-	_putchar('\n');
+	printf("%lu\n", product);
 	return (0);
 }
