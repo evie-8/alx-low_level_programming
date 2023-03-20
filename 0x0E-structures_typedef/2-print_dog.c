@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
+#include <stdlib.h>
 /**
  * print_dog - show members
  * @d: object of dog
