@@ -34,18 +34,6 @@ unsigned int *_is_binary(const char *s)
 	return (arr);
 }
 /**
- * _pow - power of x
- * @x: vase
- * @y: power
- * Return: int
- */
-int _pow(int x, int y)
-{
-	if (y == 0)
-		return (1);
-	return (x * _pow(x, y - 1));
-}
-/**
  * binary_to_uint - from binary to unsigned int
  * @b: string
  * Return: int
@@ -65,7 +53,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (y = strlen(b) - 1; y >= 0; y--)
 	{
-		sum += num[strlen(b) - y - 1] * (_pow(2, y));
+		sum += num[strlen(b) - y - 1] << y;
 	}
 	return (sum);
 }
