@@ -8,24 +8,16 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i, j, rem;
-	unsigned long int num, num1;
+	unsigned int j, rem;
+	unsigned long int num;
 
-	num = n;
-	num1 = n;
-	i = 0;
-	while (n != 0)
-	{
-		n = n >> 1;
-		i++;
-	}
-	if (index >= i)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 	for (j = 0; j <= index; j++)
 	{
-		num1 = num;
-		num = num >> 1;
-		rem = num1 - (num << 1);
+		num = n;
+		n = n >> 1;
+		rem = num - (n << 1);
 	}
 	return (rem);
 }
