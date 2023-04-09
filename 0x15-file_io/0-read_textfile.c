@@ -8,19 +8,33 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int  x, y, z;
-	char *c = malloc(sizeof(char) * letters);
+	char *c = malloc(sizeof(char) * letters + 1);
 
 	if (filename == NULL)
 		return (0);
 	x = open(filename, O_RDONLY);
-	if (x == -1)
+	if (x == 0)
 		return (0);
+	if (c == NULL)
+	{
+		close(x);
+		return (0);
+	}
 	y = read(x, c, letters);
-	if (y == -1)
+	if (y == 0)
+	{	free(c);
+		close(x);
 		return (0);
+	}
+	c[y] = '\0';
 	z = write(1, c, y);
-	if (z == -1)
+	if (z == 0)
+	{
+		free(c);
+		close(x);
 		return (0);
-	return (z);
+	}
+	free(c);
+	close(x);
+	return (y);
 }
-
