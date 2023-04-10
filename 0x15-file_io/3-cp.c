@@ -1,8 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 
 #define buffer 1024
 
@@ -58,7 +56,6 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	c = reads(argv[1]);
-	umask(0);
 	z = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	if (z == -1)
 	{
