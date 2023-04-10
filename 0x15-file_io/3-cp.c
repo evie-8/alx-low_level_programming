@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	c = reads(argv[1], 1024);
-	umask(0);
 	z = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (z == -1)
 	{
