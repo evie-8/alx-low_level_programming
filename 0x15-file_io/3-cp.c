@@ -30,6 +30,7 @@ void check_error(int from, int to, char *argv[])
 void file_closed(int n)
 {
 	int error;
+
 	error = close(n);
 	if (error == -1)
 	{
