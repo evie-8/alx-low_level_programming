@@ -11,7 +11,7 @@
  */
 char *reads(char *filename)
 {
-	int x, y, z;
+	int x, y = buffer, z;
 	char *c;
 
 	c = malloc(sizeof(char) * buffer);
@@ -21,15 +21,17 @@ char *reads(char *filename)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
-	y = read(x, c, buffer);
-	if (y == -1)
+	while (y == 1024)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		free(c);
-		close(x);
-		exit(98);
+		y = read(x, c, buffer);
+		if (y == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+			free(c);
+			close(x);
+			exit(98);
+		}
 	}
-	c[y] = '\0';
 	z = close(x);
 	if (z == -1)
 	{
