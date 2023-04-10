@@ -26,7 +26,7 @@ char *reads(char *filename, size_t b)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", filename);
 		free(c);
-		close(x);
+		z = close(x);
 		exit(98);
 	}
 	c[y] = '\0';
@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	c = reads(argv[1], 1024);
+	umask(0);
 	z = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (z == -1)
 	{
@@ -67,7 +68,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		free(c);
-		close(z);
+		b = close(z);
 		exit(99);
 	}
 	b = close(z);
